@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h2 th:text="${session.greeting}"></h2>
+
+    <a href="/reserve">Reserve a Book</a><br>
+    <a href="/viewReservations">View All Reservations</a>
+</body>
+</html>

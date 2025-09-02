@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add/Edit Review – BookReviews</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="center-frame">
+    <div class="left-pane">
+        <div class="site-logo">
+            <svg width="56" height="56" viewBox="0 0 56 56">
+                <circle cx="14" cy="14" r="14" fill="#ef4b3c"/>
+                <circle cx="42" cy="14" r="14" fill="#1973c0"/>
+                <rect x="0" y="28" width="28" height="28" fill="#ffbd17"/>
+                <rect x="28" y="28" width="28" height="28" fill="#0c0c0c"/>
+            </svg>
+        </div>
+        <nav class="bau-nav">
+            <a href="/books">Books</a>
+            <a href="/reviews">Reviews</a>
+            <a href="/logout">Logout</a>
+        </nav>
+        <div class="section-title">Add/Edit Review</div>
+        <form action="/savereview" method="post" class="form-card">
+            <label class="bau-form-label">Book Title</label>
+            <input type="text" name="bookTitle" required>
+            <label class="bau-form-label">Reviewer Name</label>
+            <input type="text" name="reviewer" required>
+            <label class="bau-form-label">Review</label>
+            <textarea name="review" rows="3" required></textarea>
+            <div class="form-btns">
+                <button type="submit" class="bau-btn">Save</button>
+                <a href="/reviews"><button type="button" class="bau-btn" style="background:var(--bau-bold)">Cancel</button></a>
+            </div>
+        </form>
+    </div>
+    <div class="right-pane">
+        <div class="geoshapes">
+            <div class="g g1"></div>
+            <div class="g g2"></div>
+            <div class="g g3"></div>
+            <div class="g g4"></div>
+            <div class="g g5"></div>
+            <div class="g g6"></div>
+            <div class="g g7"></div>
+            <div class="g g8"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

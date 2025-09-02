@@ -1,0 +1,9 @@
+CREATE TABLE REG (
+	id IDENTITY PRIMARY KEY,
+	firstName VARCHAR(255),
+	lastName VARCHAR(255),
+	gender VARCHAR(10),
+	email VARCHAR(255),
+	schoolName VARCHAR(255),
+	course VARCHAR(255)
+);

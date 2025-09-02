@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Submitted Course</title>
+</head>
+<body>
+    <h2>Submitted Course List</h2>
+    <ul>
+        <li th:each="c : ${courseList}">
+            <span th:text="${c.id} + ' - ' + ${c.prefix} + ' ' + ${c.code} + ': ' + ${c.name}"></span>
+        </li>
+    </ul>
+    <br>
+    <a href="/">Submit Another Course</a>
+</body>
+</html>

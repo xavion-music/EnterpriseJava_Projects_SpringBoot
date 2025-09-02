@@ -1,0 +1,230 @@
+@font-face {
+  font-family: 'BauhausModern';
+  src: url('/fonts/BauhausModern-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Farray';
+  src: url('/fonts/FARRAY.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Pisces';
+  src: url('/fonts/Zdyk Pisces.otf') format('opentype');
+}
+:root {
+  --bau-black: #0c0c0c;
+  --bau-offwhite: #f2f2f2;
+  --bau-bold: #ef4b3c;
+  --bau-rise: #ffbd17;
+  --bau-calm: #1973c0;
+  --bau-flow: #1dab49;
+  --bau-roam: #f9b6b1;
+  --bau-peach: #e8b5ac;
+}
+body {
+  margin: 0; padding: 0;
+  background: var(--bau-rise);
+  font-family: 'BauhausModern', Arial, sans-serif;
+  min-height: 100vh;
+}
+.center-frame {
+  background: var(--bau-offwhite);
+  margin: 40px auto;
+  border-radius: 36px;
+  box-shadow: 0 8px 38px 0 rgba(30,30,30,0.13);
+  padding: 50px 48px 38px 48px;
+  max-width: 1150px;
+  min-height: 570px;
+  border: 8px solid var(--bau-black);
+  z-index: 1;
+  overflow: visible;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0px;
+}
+.left-pane {
+  width: 56%;
+  padding-right: 30px;
+  z-index: 2;
+}
+.right-pane {
+  width: 44%;
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.site-logo {
+  width: 56px; height: 56px;
+  border-radius: 18px;
+  background: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.site-logo svg {
+  display: block;
+  width: 100%; height: 100%;
+}
+.bau-nav {
+  display: flex;
+  gap: 28px;
+  font-family: 'Farray', Arial, sans-serif;
+  margin-bottom: 35px;
+}
+.bau-nav a {
+  color: var(--bau-black);
+  text-decoration: none;
+  font-size: 1.16rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 3px 11px;
+  border-radius: 7px;
+  transition: background 0.18s, color 0.18s;
+}
+.bau-nav a:hover,
+.bau-nav a.active {
+  background: var(--bau-calm);
+  color: var(--bau-offwhite);
+}
+.bau-subtle {
+  font-family: 'Pisces', Arial, sans-serif;
+  color: var(--bau-calm);
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.bau-main-title {
+  font-family: 'Farray', Arial, sans-serif;
+  font-size: 3.3rem;
+  color: var(--bau-black);
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+  line-height: 1.12;
+}
+.bau-desc {
+  color: var(--bau-black);
+  font-size: 1.18rem;
+  font-family: 'BauhausModern', Arial, sans-serif;
+  margin-bottom: 28px;
+  max-width: 420px;
+  line-height: 1.5;
+}
+.discover-btn, .bau-btn {
+  font-family: 'Farray', Arial, sans-serif;
+  font-size: 1.13rem;
+  color: var(--bau-offwhite);
+  background: var(--bau-black);
+  border: none;
+  border-radius: 25px;
+  padding: 12px 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 7px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-right: 9px;
+}
+.discover-btn:hover, .bau-btn:hover {
+  background: var(--bau-bold);
+  color: var(--bau-offwhite);
+}
+
+.geoshapes {
+  position: absolute;
+  right: 0; top: 0;
+  width: 100%; height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 90px);
+  grid-template-rows: repeat(4, 90px);
+  gap: 0;
+}
+.g { width: 90px; height: 90px; }
+.g1 { border-top-left-radius: 90px; background: var(--bau-bold);}
+.g2 { border-top-right-radius: 90px; background: var(--bau-calm);}
+.g3 { border-bottom-left-radius: 90px; background: var(--bau-rise);}
+.g4 { border-bottom-right-radius: 90px; background: var(--bau-black);}
+.g5 { background: var(--bau-rise); }
+.g6 { background: var(--bau-calm);}
+.g7 { background: var(--bau-bold);}
+.g8 { background: var(--bau-offwhite);}
+.g9 { border-top-right-radius: 90px; background: var(--bau-flow);}
+.g10 { border-bottom-left-radius: 90px; background: var(--bau-roam);}
+.g11 { background: var(--bau-peach);}
+.g12 { background: var(--bau-black);}
+.geostripes {
+  width: 65px; height: 46px; margin: 0 auto; margin-top: 15px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.geostripes div {
+  background: var(--bau-black);
+  height: 6px;
+  border-radius: 3px;
+}
+.section-title {
+  font-family: 'Farray', Arial, sans-serif;
+  font-size: 2.2rem;
+  color: var(--bau-calm);
+  margin-bottom: 28px;
+}
+.list-card, .form-card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 6px 26px 0 rgba(30,30,30,0.08);
+  padding: 34px 32px 32px 32px;
+  margin-bottom: 25px;
+}
+.book-item, .review-item {
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+.bau-form-label {
+  display: block;
+  margin-bottom: 7px;
+  font-family: 'Farray', Arial, sans-serif;
+  color: var(--bau-calm);
+  font-size: 1.07rem;
+  letter-spacing: 0.5px;
+}
+input[type="text"], input[type="password"], textarea {
+  width: 100%;
+  padding: 10px 13px;
+  border-radius: 13px;
+  border: 2px solid var(--bau-peach);
+  font-size: 1.12rem;
+  font-family: 'BauhausModern', Arial, sans-serif;
+  margin-bottom: 18px;
+  outline: none;
+}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+  border: 2px solid var(--bau-calm);
+}
+.form-btns {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+}
+.login-box {
+  max-width: 420px;
+  margin: 90px auto 0 auto;
+  padding: 50px 36px 35px 36px;
+  background: var(--bau-offwhite);
+  border-radius: 32px;
+  border: 6px solid var(--bau-calm);
+  box-shadow: 0 5px 19px 0 rgba(0,0,0,0.07);
+}
+.login-title {
+  font-family: 'Farray', Arial, sans-serif;
+  color: var(--bau-calm);
+  font-size: 2.1rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+@media (max-width: 980px) {
+  .center-frame { flex-direction: column; padding: 24px 3vw 25px 3vw; }
+  .left-pane, .right-pane { width: 100%; }
+  .right-pane { height: 250px; }
+}

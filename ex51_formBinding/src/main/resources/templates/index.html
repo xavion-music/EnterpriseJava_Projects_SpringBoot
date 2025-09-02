@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Recipe Manager</title>
+    <meta charset="UTF-8">
+    <style>
+        table.simple-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table.simple-table, table.simple-table th, table.simple-table td {
+            border: 1px solid black;
+        }
+        table.simple-table th, table.simple-table td {
+            padding: 4px 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h2>Recipe List</h2>
+    <table class="simple-table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Ingredients</th>
+            <th>Type</th>
+        </tr>
+        <tr th:each="r : ${recipeList}">
+            <td th:text="${r.id}">1</td>
+            <td th:text="${r.name}">Pizza</td>
+            <td th:text="${r.ingredients}">Dough, Cheese</td>
+            <td th:text="${r.type}">Vegetarian</td>
+        </tr>
+    </table>
+
+    <h3>Add New Recipe</h3>
+    <form th:action="@{/addRecipe}" th:object="${recipe}" method="post">
+        ID: <input type="number" th:field="*{id}" /> <br>
+        Name: <input type="text" th:field="*{name}" /> <br>
+        Ingredients: <input type="text" th:field="*{ingredients}" /> <br>
+        Type:
+        <select th:field="*{type}">
+            <option th:each="t : ${T(ca.sheridancollege.chaupala.beans.Recipe).TYPES}" th:value="${t}" th:text="${t}"></option>
+        </select>
+        <br>
+        <input type="submit" value="Add Recipe" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Reservations</title>
+</head>
+<body>
+    <h2>List of Book Reservations</h2>
+
+    <table border="1" th:if="${reservationList != null}">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Book Title</th>
+            <th>Genre</th>
+            <th>Pickup Location</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="r : ${reservationList}">
+            <td th:text="${r.firstName}"></td>
+            <td th:text="${r.lastName}"></td>
+            <td th:text="${r.email}"></td>
+            <td th:text="${r.bookTitle}"></td>
+            <td th:text="${r.genre}"></td>
+            <td th:text="${r.pickupLocation}"></td>
+            <td>
+                <a th:href="@{'/edit/' + ${r.id}}">Edit</a> |
+                <a th:href="@{'/delete/' + ${r.id}}">Delete</a>
+            </td>
+        </tr>
+    </table>
+
+    <br><a href="/">Back to Home</a>
+</body>
+</html>

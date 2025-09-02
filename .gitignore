@@ -8,3 +8,4 @@ bin/
 *.swp
 *.tmp
 .DS_Store
+.metadata/

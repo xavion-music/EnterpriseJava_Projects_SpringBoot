@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Success</title>
+  <link rel="stylesheet" th:href="@{/liquid-glass.css}" />
+</head>
+<body>
+  <h2 th:text="'Welcome to the ' + ${registration.course} + ' Course'"></h2>
+  <div class="liquid-card success-message">
+    <p th:text="'Thank you, ' + ${registration.firstName} + ' ' + ${registration.lastName} + '!'"></p>
+    <p>Email: <span th:text="${registration.email}"></span></p>
+    <p>School: <span th:text="${registration.schoolName}"></span></p>
+    <p>Gender: <span th:text="${registration.gender}"></span></p>
+  </div>
+  <br/>
+  <a href="/view">View All Registrations</a>
+</body>
+</html>

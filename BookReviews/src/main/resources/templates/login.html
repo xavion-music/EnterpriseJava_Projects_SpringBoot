@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login – BookReviews</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="login-box">
+        <div class="site-logo" style="margin-bottom: 28px;">
+            <svg width="56" height="56" viewBox="0 0 56 56">
+                <circle cx="14" cy="14" r="14" fill="#ef4b3c"/>
+                <circle cx="42" cy="14" r="14" fill="#1973c0"/>
+                <rect x="0" y="28" width="28" height="28" fill="#ffbd17"/>
+                <rect x="28" y="28" width="28" height="28" fill="#0c0c0c"/>
+            </svg>
+        </div>
+        <div class="login-title">Login</div>
+        <form action="/login" method="post">
+            <label class="bau-form-label">Username</label>
+            <input type="text" name="username" required>
+            <label class="bau-form-label">Password</label>
+            <input type="password" name="password" required>
+            <div class="form-btns">
+                <button type="submit" class="bau-btn">Login</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

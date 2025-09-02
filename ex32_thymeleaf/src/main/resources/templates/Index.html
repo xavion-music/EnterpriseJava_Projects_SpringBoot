@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Course Manager</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Course List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Prefix</th>
+                <th>Code</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="course : ${courseList}">
+                <td th:text="${course.id}">1</td>
+                <td th:text="${course.prefix}">CSE</td>
+                <td th:text="${course.code}">101</td>
+                <td th:text="${course.name}">Intro to Java</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Add a New Course</h2>
+    <form method="post" th:action="@{/addCourse}">
+        <label>ID: <input type="number" name="id" /></label><br>
+        <label>Prefix: <input type="text" name="prefix" /></label><br>
+        <label>Code: <input type="number" name="code" /></label><br>
+        <label>Name: <input type="text" name="name" /></label><br>
+        <input type="submit" value="Add Course" />
+    </form>
+</body>
+</html>
