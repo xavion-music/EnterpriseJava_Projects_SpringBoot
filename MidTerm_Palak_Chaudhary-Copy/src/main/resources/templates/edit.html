@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Reservation</title>
+</head>
+<body>
+    <h2>Edit Your Reservation</h2>
+
+    <form th:action="@{/updateReservation}" method="post" th:object="${reservation}">
+        <input type="hidden" th:field="*{id}" />
+
+        First Name: <input type="text" th:field="*{firstName}" required/><br><br>
+        Last Name: <input type="text" th:field="*{lastName}" required/><br><br>
+        Email: <input type="email" th:field="*{email}" required/><br><br>
+        Book Title: <input type="text" th:field="*{bookTitle}" required/><br><br>
+
+        Genre:
+        <select th:field="*{genre}">
+            <option value="Fiction">Fiction</option>
+            <option value="Non-fiction">Non-fiction</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+        </select><br><br>
+
+        Pickup Location:<br>
+        <input type="radio" th:field="*{pickupLocation}" value="Central Branch"/> Central Branch<br>
+        <input type="radio" th:field="*{pickupLocation}" value="North Branch"/> North Branch<br><br>
+
+        <input type="submit" value="Update Reservation"/>
+    </form>
+</body>
+</html>

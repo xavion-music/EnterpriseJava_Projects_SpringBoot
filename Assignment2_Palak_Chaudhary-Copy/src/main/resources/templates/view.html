@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>View Registrations</title>
+  <link rel="stylesheet" th:href="@{/liquid-glass.css}" />
+</head>
+<body>
+  <h2>Registered Students</h2>
+  <div class="liquid-card">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>School</th>
+        <th>Course</th>
+        <th>Actions</th>
+      </tr>
+      <tr th:each="r : ${registrations}">
+        <td th:text="${r.firstName + ' ' + r.lastName}"></td>
+        <td th:text="${r.email}"></td>
+        <td th:text="${r.gender}"></td>
+        <td th:text="${r.schoolName}"></td>
+        <td th:text="${r.course}"></td>
+        <td>
+          <a th:href="@{/edit/{id}(id=${r.id})}">Edit</a> |
+          <a th:href="@{/delete/{id}(id=${r.id})}">Delete</a>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

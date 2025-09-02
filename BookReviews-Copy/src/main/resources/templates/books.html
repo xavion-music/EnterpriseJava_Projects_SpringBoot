@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script th:src="@{/reviewscript.js}"></script>
+</head>
+<body>
+	<ul>
+		<li th:each="book : ${books}">
+			<a href="#"
+				th:onclick="'getReviews(' + ${book.id} + ')'"
+				th:text="${book.title} + ' by ' + ${book.authors}"> 
+			</a>
+		</li>
+	</ul>
+
+	<hr />
+
+	<div id="reviewdetails"></div>
+</body>
+</html>

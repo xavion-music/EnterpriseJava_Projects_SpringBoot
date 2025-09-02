@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Edit Registration</title>
+  <link rel="stylesheet" th:href="@{/liquid-glass.css}" />
+</head>
+<body>
+  <h2>Edit Registration</h2>
+  <div class="liquid-card">
+    <form th:action="@{/update}" th:object="${registration}" method="post">
+      <input type="hidden" th:field="*{id}" />
+
+      First Name:<br/>
+      <input type="text" th:field="*{firstName}" required /><br/>
+
+      Last Name:<br/>
+      <input type="text" th:field="*{lastName}" required /><br/>
+
+      Gender:<br/>
+      <input type="radio" th:field="*{gender}" value="Male" /> Male
+      <input type="radio" th:field="*{gender}" value="Female" /> Female<br/>
+
+      Email:<br/>
+      <input type="email" th:field="*{email}" required /><br/>
+
+      School:<br/>
+      <select th:field="*{schoolName}">
+        <option value="Sheridan Trafalgar Campus">Sheridan Trafalgar Campus</option>
+        <option value="Sheridan Davis Campus">Sheridan Davis Campus</option>
+      </select><br/>
+
+      Course:<br/>
+      <select th:field="*{course}">
+        <option value="Java">Java</option>
+        <option value="Python">Python</option>
+        <option value="Ruby">Ruby</option>
+        <option value="Scala">Scala</option>
+      </select><br/>
+
+      <input type="submit" value="Update" />
+    </form>
+  </div>
+</body>
+</html>

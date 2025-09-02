@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script th:src="@{/reviewscript.js}"></script>
+</head>
+<body>
+	<h1>Book List</h1>
+	<ul>
+		<li th:each="b : ${books}">
+			<a href="#" th:onclick="'getReviews(' + ${b.id} + ')'" th:text="${b.title}"></a>
+			<span th:text="${b.authors}"></span> 
+			<a th:href="@{'/editBook/' + ${b.id}}">edit</a> 
+			<a th:href="@{'/deleteBook/' + ${b.id}}">delete</a> 
+			<a th:href="@{'/newReview/' + ${b.id}}">Write Review</a>
+		</li>
+	</ul>
+
+	<a href="/newBook">Add New Book</a>
+
+	<hr />
+	
+	<div id="reviewdetails"></div>
+</body>
+
+</html>

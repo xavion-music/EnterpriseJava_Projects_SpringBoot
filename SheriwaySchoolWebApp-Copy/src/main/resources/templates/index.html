@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sheriway School</title>
+    <style>
+        body {
+            background-color: #f5f5f5; 
+            font-family: Arial;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        p {
+            line-height: 1.6;
+            color: #444; 
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            border: 1px solid #ddd; 
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div th:insert="~{fragments/header}"></div>
+    
+    <p>In an economy based on innovation and change, leading CEOs agree that creativity is the top skill you can bring to the workplace. 
+    Whether you choose policing or programming, musical theatre or marketing, Sheriway will help you build a resourceful and flexible 
+    mind will help you excel in your career and inspire real change that benefits your life and community.</p>
+    
+    <div th:replace="~{fragments/footer}"></div>
+</body>
+</html>
